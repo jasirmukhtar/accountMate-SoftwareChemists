@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccountMate - ERP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="logo-block">
+        <div class="logo-icon">M</div>
+        <div>
+          <div class="logo-title">Account Mate - Software</div>
+          <div class="logo-sub" id="shop-name-sidebar">Loading...</div>
+        </div>
+      </div>
+      <nav class="nav-menu">
+        <div class="nav-section-label">OPERATIONS</div>
+        <a class="nav-item active" data-page="dashboard" onclick="navigate('dashboard')">
+          <span class="nav-icon">⬡</span> Dashboard
+        </a>
+        <a class="nav-item" data-page="purchase" onclick="navigate('purchase')">
+          <span class="nav-icon">↓</span> Purchase
+        </a>
+        <a class="nav-item" data-page="sales" onclick="navigate('sales')">
+          <span class="nav-icon">↑</span> Sales
+        </a>
+        <a class="nav-item" data-page="stock" onclick="navigate('stock')">
+          <span class="nav-icon">◈</span> Stock Ledger
+        </a>
+        <a class="nav-item" data-page="opening-stock" onclick="navigate('opening-stock')">
+          <span class="nav-icon">⊕</span> Opening Stock
+        </a>
+        <div class="nav-section-label">MASTERS</div>
+        <a class="nav-item" data-page="products" onclick="navigate('products')">
+          <span class="nav-icon">◉</span> Products
+        </a>
+        <a class="nav-item" data-page="distributors" onclick="navigate('distributors')">
+          <span class="nav-icon">◎</span> Distributors
+        </a>
+        <div class="nav-section-label">ANALYTICS</div>
+        <a class="nav-item" data-page="analytics" onclick="navigate('analytics')">
+          <span class="nav-icon">▨</span> Analytics
+        </a>
+        <a class="nav-item" data-page="expiry" onclick="navigate('expiry')">
+          <span class="nav-icon">⚠</span> Expiry Alerts
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="status-dot"></div> OFFLINE READY
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main id="main-content">
+      <div id="page-dashboard"     class="page active"></div>
+      <div id="page-purchase"      class="page"></div>
+      <div id="page-sales"         class="page"></div>
+      <div id="page-stock"         class="page"></div>
+      <div id="page-opening-stock" class="page"></div>
+      <div id="page-products"      class="page"></div>
+      <div id="page-distributors"  class="page"></div>
+      <div id="page-analytics"     class="page"></div>
+      <div id="page-expiry"        class="page"></div>
+    </main>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast-container"></div>
+
+  <!-- Modal overlay -->
+  <div id="modal-overlay" class="hidden" onclick="closeModal()">
+    <div id="modal-box" onclick="event.stopPropagation()">
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/purchase.js"></script>
+  <script src="js/sales.js"></script>
+  <script src="js/stock.js"></script>
+  <script src="js/opening-stock.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/distributors.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/expiry.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
